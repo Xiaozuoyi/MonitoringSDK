@@ -1,0 +1,19 @@
+{
+  "env": {
+    "es2021": true, // 解释：启用 ES12 语法
+    "browser": true // 解释：启用浏览器全局变量
+  },
+  "extends": [
+    "eslint:recommended", // 解释：启用推荐规则
+    "plugin:prettier/recommended" // 解释：启用 prettier 推荐规则
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest", // 解释：启用最新的 ECMAScript 版本
+    "sourceType": "module" // 解释：启用 ES 模块
+  },
+  "rules": {}, // 解释：自定义规则
+  "globals": {
+    "window": true, // 解释：启用 window 全局变量
+    "document": true // 解释：启用 document 全局变量
+  }
+}
