@@ -2,7 +2,7 @@
   "name": "monitor",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "build": "rollup -c -w",
@@ -39,21 +39,14 @@
     "ua-parser-js": "^1.0.35"
   },
   "lint-staged": {
-    "src/*.js": [
-      "eslint --fix",
+    "src/**/*.js": [
       "prettier --write",
-      "git add"
+      "eslint --fix"
     ]
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
 }
