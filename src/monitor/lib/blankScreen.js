@@ -1,5 +1,5 @@
 import tracker from '../utils/tracker'
-import onload from '../utils/unload'
+import onload from '../utils/onload'
 
 let emptyPoints = 0 // 空白点数
 
@@ -48,7 +48,7 @@ function blankScreen() {
       }
     }
     // todo: 18 为一个经验值，可以根据实际情况调整
-    if (emptyPoints > 0) {
+    if (emptyPoints > 18) {
       const centerElements = document.elementsFromPoint(
         window.innerWidth / 2,
         window.innerHeight / 2

@@ -22,6 +22,7 @@ function getExtraData() {
 class SendTracker {
   constructor() {
     this.url = `https://${project}.${host}/logstores/${logStore}/track` // 上报地址
+    // this.xhr = new XMLHttpRequest() // 创建 XMLHttpRequest 对象
   }
 
   send(data = {}) {
@@ -51,6 +52,22 @@ class SendTracker {
           chalk.green(chalk.white.bgRed.bold(`${err.message}` + `上报失败`))
         )
       })
+    // console.log('body:', body)
+    // this.xhr.open('POST', this.url, true) // 配置请求信息
+    // this.xhr.setRequestHeader('Content-Type', 'application/json') // 设置请求体类型
+    // this.xhr.setRequestHeader('x-log-apiversion', '0.6.0') // 设置版本号
+    // this.xhr.setRequestHeader('x-log-bodyrawsize', body.length) // 设置请求体大小
+    // this.xhr.onload = function () {
+    //   // 请求成功
+    //   console.log(chalk.green(chalk.white.bgMagenta.bold('上报成功')))
+    // }
+    // this.xhr.onerror = function (err) {
+    //   // 请求失败
+    //   console.log(
+    //     chalk.green(chalk.white.bgRed.bold(`${err.message}` + `上报失败`))
+    //   )
+    // }
+    // this.xhr.send(body) // 发送请求
   }
 }
 export default new SendTracker()
